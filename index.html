@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&samhoud AI & Leadership Newsletter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/futura-pt');
+        
+        :root {
+            --primary-blue: #0c2aad;
+            --primary-ocean: #4272ab;
+            --accent-iris: #b4bbfa;
+            --accent-orange: #ffa314;
+            --accent-ivory: #fef9f3;
+            --text-color: #333;
+            --section-padding: 40px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Futura PT', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 50px 0; /* Increased from 30px to 50px */
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        h3 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-orange);
+        }
+
+        h4 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        p, li {
+            font-family: 'Futura PT', sans-serif;
+            margin-bottom: 15px;
+        }
+        
+        .subheader {
+            font-family: 'Futura PT Light Oblique', 'Futura PT', sans-serif;
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            padding: 20px 0; /* Reduced from 40px to 20px */
+            background-color: white;
+        }
+        
+        .section h2 {
+            color: var(--primary-blue);
+        }
+        
+        .section-header {
+            color: var(--primary-ocean);
+            padding: 30px 0 10px 0;
+            margin-bottom: 30px;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-ocean);
+            display: inline-block;
+            padding-bottom: 8px;
+            position: relative;
+        }
+        
+        .section-header h2:after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: var(--primary-ocean);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 4px solid var(--accent-orange);
+            margin: 20px 0;
+            background-color: var(--accent-ivory);
+        }
+        
+        .highlight {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .prompt-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .step {
+            flex: 1;
+            padding: 20px;
+            margin: 0 10px;
+            border-radius: 8px;
+            color: white;
+            position: relative;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .step-1 {
+            background-color: var(--primary-blue);
+        }
+        
+        .step-2 {
+            background-color: var(--primary-ocean);
+        }
+        
+        .step-3 {
+            background-color: var(--accent-orange);
+        }
+        
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .story-image {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+        
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* For wide banner images like the WPP and Spotify ones */
+        .story-image.wide-image img {
+            object-fit: cover;
+        }
+        
+        /* For icon-style images like the 5Is */
+        .story-image.icon-image {
+            background-color: #000;
+        }
+        
+        .story-image.icon-image img {
+            object-fit: contain;
+            padding: 10px;
+            max-height: 100%;
+        }
+        
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .prompt-steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+     <div class="container">
+        <h1 style="margin-bottom: 0;">&samhoud | AI Inspiration Newsletter</h1>
+        <p class="subheader">Inspiration for Media & Advertising Professionals</p>
+     </div>
+    </header>
+    
+    <section class="section" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="card full-width">
+                <p>Welcome to the first edition of our AI Inspiration Newsletter! Organizations are changing rapidly under the influence of AI. With this newsletter, you'll stay informed about the latest developments, inspiring insights, and practical examples at the intersection of technology, media, and advertising.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>1. AI News in the World: Trends & Developments</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Multimodal Image Generation: A New Level of Creativity</h3>
+                    <div class="story-image wide-image">
+                        <img src="image (1) (1).png" alt="WPP, GroupM and InfoSum logos on blue background" />
+                    </div>
+                    <div id="content-container-multimodal" class="card-container">
+                        <div class="first-paragraph">
+                            <p>In recent weeks, both Google and OpenAI have achieved a breakthrough with multimodal image generation. This means that AI can now directly create images with the same precision as text, token by token. Where previously generated text on images often changed into illegible scribbles, AI can now create professional-looking visual content with readable texts. For example, the images in part 1 and part 3 of this newsletter have been AI generated.</p>
+                            <div id="btn-container-multimodal" class="btn-container">
+                                <button id="btn-multimodal" class="read-more-btn" onclick="toggleContent('multimodal')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-multimodal" class="card-content-hidden">
+                            <p>This technology opens up a world of new possibilities for creative professionals. The combination of precision and dialogue makes this technology particularly powerful, as you can directly consult with the AI about your images and refine them until they're perfect.</p>
+                            <p>This technology is now accessible via a free ChatGPT account, although there are limitations on the number of images you can create per day. With a paid account, you can generate images faster and without limits.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Vibe Coding: Programming Without Code<br></h3>
+                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                    <div class="story-image wide-image">
+                        <img src="image (2) (1).png" alt="Spotify Advance 3D blue and green waves" />
+                    </div>
+                    <div id="content-container-vibecoding" class="card-container">
+                        <div class="first-paragraph">
+                            <p>A second fascinating development is "vibe coding," a revolutionary way to create digital products without programming knowledge. The term describes a process where you simply explain in plain language what you want to build, including the desired "vibe" or style, after which the AI generates working code. This newsletter, for example, is made completely through vibe coding in <a href="https://claude.ai" target="_blank">Claude AI</a>.</p>
+                            <div id="btn-container-vibecoding" class="btn-container">
+                                <button id="btn-vibecoding" class="read-more-btn" onclick="toggleContent('vibecoding')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-vibecoding" class="card-content-hidden">
+                            <p>In essence, this means: you tell AI what you want to build in natural language, and the AI converts this into working code. You don't need to program; you describe your idea, iterate a bit, and you have a working app or website. This not only speeds up the innovation process but also opens new doors for creativity because technical complexity is no longer a limitation.</p>
+                            
+                            <p>This feature is available (with limitations) for free in both ChatGPT and Claude AI, with the option to directly deploy the site. For a practical demonstration, we used just one prompt to create an interactive quiz about this newsletter, which you can experience <a href="https://claude.site/artifacts/94cc35cd-30bb-4257-a3c8-5ce29dad4ccc" target="_blank">here</a>.</p>
+                            
+                            <h4>Prompt used:</h4>
+                            <div class="quote">
+                                "Create an interactive quiz about this newsletter with 10 multiple-choice questions. Make it visually appealing with a clean design that matches the &samhoud brand colors (primary blue #0c2aad, accent orange #ffa314). Include a score tracker and immediate feedback for each answer. At the end, display the final score."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>2. Trends in the Advertisement Industry: AI's Growing Influence</h2>
+            </div>
+            
+            <style>
+                .card-content-hidden {
+                    display: none;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease-in-out;
+                }
+                
+                .card-content-visible {
+                    display: block;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease-in-out;
+                }
+                
+                .read-more-btn {
+                    background-color: var(--primary-ocean);
+                    color: white;
+                    border: none;
+                    padding: 8px 15px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-family: 'Futura PT', sans-serif;
+                    font-size: 0.9rem;
+                    margin: 10px 0;
+                    transition: background-color 0.3s ease;
+                }
+                
+                .read-more-btn:hover {
+                    background-color: var(--primary-blue);
+                }
+                
+                .card-container {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .first-paragraph {
+                    min-height: 120px;
+                    display: flex;
+                    flex-direction: column;
+                }
+                
+                .btn-container {
+                    margin-top: auto;
+                }
+            </style>
+            
+            <script>
+                function toggleContent(id) {
+                    const hiddenContent = document.getElementById('content-' + id);
+                    const button = document.getElementById('btn-' + id);
+                    const buttonContainer = document.getElementById('btn-container-' + id);
+                    const contentContainer = document.getElementById('content-container-' + id);
+                    const firstParagraph = contentContainer.querySelector('.first-paragraph');
+                    
+                    if (hiddenContent.className === 'card-content-hidden') {
+                        hiddenContent.className = 'card-content-visible';
+                        button.textContent = 'Read less';
+                        
+                        // Move button after the content
+                        contentContainer.appendChild(buttonContainer);
+                    } else {
+                        hiddenContent.className = 'card-content-hidden';
+                        button.textContent = 'Read more';
+                        
+                        // Move button back to first paragraph
+                        firstParagraph.appendChild(buttonContainer);
+                    }
+                }
+            </script>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>The 5Is Framework: BBC's Blueprint for the Future of Media</h3>
+                    <div class="story-image icon-image">
+                        <img src="resized_RTL_AA_500x200_padded.png" alt="5Is Framework icons in colorful circles" />
+                    </div>
+                    <div id="content-container-bbc" class="card-container">
+                        <p>The media landscape is undergoing rapid transformation as AI reshapes every aspect of content creation and consumption. BBC Research & Development has developed an framework—the "5Is"—that helps media leaders navigate this evolving territory. The media landscape is increasingly: Internet-only, Intelligent, Intermediated, Interactive, and Immersive.</p>
+                        <div id="btn-container-bbc">
+                            <button id="btn-bbc" class="read-more-btn" onclick="toggleContent('bbc')">Read more</button>
+                        </div>
+                        <div id="content-bbc" class="card-content-hidden">
+                            <ul>
+                                <li><strong>Internet-only:</strong> "More than half of UK households will exclusively watch TV over the internet by 2030."</li>
+                                <li><strong>Intelligent:</strong> "57% of UK Millennials want their content hyper-personalised." AI systems learn and adapt over time, improving their ability to deliver content that aligns with user interests and behaviours.</li>
+                                <li><strong>Intermediated:</strong> "Over 50% of UK adults use social media as a news source." To maintain a direct and independent relationship with audiences, it is necessary to understand and work with the platforms and (AI) agents that mediate this interaction.</li>
+                                <li><strong>Interactive:</strong> "Interactive content generates a 52% higher engagement rate than static content". Today's audiences prefer dynamic interactions, which AI enables by adjusting content in real-time based on user input for personalized experiences.</li>
+                                <li><strong>Immersive:</strong> "By 2025, […] 95% (roughly 65 million people) will be smartphone users users." Through technologies like virtual and augmented reality, AI can contribute to creating more immersive content environments, enhancing user engagement.</li>
+                            </ul>
+                            <p>For media industry stakeholders, this framework illustrates how these converging forces are creating fundamentally new audience expectations. The BBC's analysis highlights that new experiences are particularly transformative—as AI systems are increasingly accurate, contextualize, and sometimes even transform media based on individual preferences.</p>
+                            <p>If you want to read more, please use this link: <a href="#">The forces shaping the media landscape for the next generation</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Agentic AI as a Transformative Force</h3>
+                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                    <div class="story-image wide-image">
+                        <img src="Afbeelding2.png" alt="Colorful circular data visualization on black background" />
+                    </div>
+                    <div id="content-container-agentic" class="card-container">
+                        <p>Deloitte's recent analysis of agentic AI positions agentic AI as "the new frontier in AI evolution". Unlike conventional AI systems that simply respond to queries or perform discrete tasks, agentic AI operates with significantly more autonomy—understanding context, setting sub-goals, and adapting to changing conditions without constant human direction.</p>
+                        <div id="btn-container-agentic">
+                            <button id="btn-agentic" class="read-more-btn" onclick="toggleContent('agentic')">Read more</button>
+                        </div>
+                        <div id="content-agentic" class="card-content-hidden">
+                            <p>According to Deloitte's research, this shift represents a fundamental evolution from "tools" to "partners". For media organizations, this means AI systems that can independently research topics, identify relevant insights, suggest (creative) angles, draft initial content, and even evaluate potential audience reception—all while maintaining alignment with editorial guidelines and brand voice.</p>
+                            <p>What makes this development particularly significant for media leaders is its potential to address the industry's persistent challenge of balancing quality with efficiency. As Deloitte notes: "These agents will be more accurate, sophisticated, and accessible, potentially having their own marketplaces and info exchange systems."</p>
+                            <p>One media strategist from the IAB (Internet Architecture Board) describes it in a seminar (Agentic AI: What Is It and How Will It Change Advertising?) discussing Agentic AI that "they are great for automating things that never stop, like optimizing websites, allocating budgets, tracking social media all day to uncover the trends in real time for companies to react to or shift their marketing around. We as humans just aren't built to be able to handle so much data at the same time". By offloading repetitive decision-making and executional tasks, Agentic AI can free up human creatives to focus on brand storytelling and innovation—making it a powerful force multiplier for media organizations ready to lead in the AI era.</p>
+                            <p>In the upcoming newsletter, we will dive deep into Agentic AI by discussing one of the frontrunning Agentic AI tool, N8N.</p>
+                            <p>If you want to read the full Deloitte article, please follow this link: <a href="#">Agentic AI: The new frontier in AI evolution | Deloitte Luxembourg</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Spotify's AI-Powered Advertising Revolution</h3>
+                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                    <div class="story-image">
+                        <img src="Afbeelding3.jpg" alt="AI-generated image for multimodal generation" />
+                    </div>
+                    <div id="content-container-spotify" class="card-container">
+                        <p>Spotify's recent Advance event showcased how a major media platform is applying advanced AI to transform both audience experiences and business models. Their approach demonstrates how AI can simultaneously enhance content relevance and create new value for publishers and advertisers.</p>
+                        <div id="btn-container-spotify">
+                            <button id="btn-spotify" class="read-more-btn" onclick="toggleContent('spotify')">Read more</button>
+                        </div>
+                        <div id="content-spotify" class="card-content-hidden">
+                            <p>Their three key announcements highlight practical applications with implications across the media industry:</p>
+                            <ol>
+                                <li><strong>Context-Aware Content Delivery:</strong> Spotify's AI now analyzes situational contexts alongside user preferences—recognizing when listeners are exercising, working, relaxing, or commuting, and adapting content presentation accordingly. This capability enables dynamic content packaging optimized for specific consumption moments.</li>
+                                <li><strong>Creative Variation Engine:</strong> Their new AI tools can generate thousands of content variations optimized for different audience segments while maintaining consistent brand identity and editorial standards—a capability that could revolutionize how media organizations approach personalization.</li>
+                                <li><strong>Predictive Engagement Framework:</strong> Their platform now offers predictive analytics that forecast audience response patterns before content is widely released, allowing for pre-emptive optimization of both creative elements and distribution strategies.</li>
+                            </ol>
+                            <p>These capabilities showcase how AI is enabling media platforms to develop increasingly sophisticated relationships with their audiences—evolving from mass distribution to individualized experiences at scale.</p>
+                            <p>If you want to read the full article, please follow this link: <a href="#">The Three Key Takeaways for Advertisers From Our Spotify Advance Event — Spotify</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Data Unification: WPP's Strategic Investment in AI-Driven Solutions</h3>
+                    <div class="story-image">
+                        <img src="Afbeelding5.jpg" alt="AI-generated image for vibe coding" />
+                    </div>
+                    <div id="content-container-wpp" class="card-container">
+                        <p>WPP's (parent company of GroupM) acquisition of InfoSum signals a strategic shift in how AI advertising conglomerates are approaching data management and privacy challenges. This $150 million investment underscores the critical importance of sophisticated data infrastructure in the evolving advertising landscape.</p>
+                        <div id="btn-container-wpp">
+                            <button id="btn-wpp" class="read-more-btn" onclick="toggleContent('wpp')">Read more</button>
+                        </div>
+                        <div id="content-wpp" class="card-content-hidden">
+                            <p>InfoSum's technology enables advertisers to connect diverse data sources without actually moving or sharing the underlying information—a capability that grows increasingly valuable as privacy regulations tighten and third-party cookies phase out. The platform uses advanced AI to derive insights while maintaining strict data separation protocols.</p>
+                            <p>Mark Read, CEO of WPP, described the acquisition as "At WPP, we have been building the technology and data infrastructure that will give our clients a unique competitive advantage in the AI era."</p>
+                            <p>This development illustrates how AI is not just changing campaign execution but fundamentally transforming the infrastructure that supports modern advertising operations.</p>
+                            <p>If you want to read the full article, please follow this link: <a href="#">WPP Acquires InfoSum in Major Investment in its AI-Driven Data Offer - GroupM</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>3. People & Leadership</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>AI Makes Leaders More Human</h3>
+                    <div class="story-image">
+                         <img src="Nieuwsbrief - AI maakt leiders menselijker (1).png" alt="AI Makes Leaders More Human" />
+                    </div>
+                    <div id="content-container-leaders" class="card-container">
+                        <p>As AI takes over more tasks, an interesting paradox emerges: this technology can actually encourage more human leadership. Recent research by leadership experts Rasmus Hougaard and Jacqueline Carter, described in their book "More Human," shows that AI offers three important benefits for leaders.</p>
+                        <div id="btn-container-leaders">
+                            <button id="btn-leaders" class="read-more-btn" onclick="toggleContent('leaders')">Read more</button>
+                        </div>
+                        <div id="content-leaders" class="card-content-hidden">
+                            <p>First, leaders achieve significant time savings on administrative tasks. A CHRO at Accenture discovered that AI reduced the time spent gathering information for performance reviews from 45 minutes to just 5 minutes. This creates space for what truly matters: listening to employees and paying attention to their development.</p>
+                            <p>Second, AI offers possibilities for customization in leadership style by helping to analyze individual needs and preferences of team members. And finally, AI can support strengthening human qualities such as empathy and awareness. At Mastercard, chief people officer Michael Fraccaro is experimenting with an AI coach, with which he practices challenging conversations in the workforce and receives recommendations.</p>
+                            <p>The challenge for modern leaders is to use AI not to replace human contact, but to deepen it.</p>
+                            <div class="quote">
+                                "We encourage you to think about how you interact with your people. What experience can you give them, so that the meeting, email, or text message really becomes worthwhile and cannot be replicated by a machine." - Hougaard and Carter
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>AI Teammates Boost Performance</h3>
+                    <div class="story-image">
+                        <img src="Nieuwsbrief - AI als teamgenoot.png" alt="AI as your Teammate" />
+                    </div>
+                    <div id="content-container-teammate" class="card-container" id="ai-teammate">
+                        <p>A large-scale experiment at Procter & Gamble, conducted by Harvard and Wharton Business School with 776 experienced professionals, shows fascinating results about AI as a teammate in professional environments. The <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231" target="_blank">research</a> reveals:</p>
+                        <div id="btn-container-teammate">
+                            <button id="btn-teammate" class="read-more-btn" onclick="toggleContent('teammate')">Read more</button>
+                        </div>
+                        <div id="content-teammate" class="card-content-hidden">
+                            <ul>
+                                <li><strong>Better performance:</strong> one person with AI can achieve comparable results to a two-person team without AI, while a two-person team using AI achieves the very best results.</li>
+                                <li><strong>Breaking down silos:</strong> AI helps specialists embrace each other's fields. In the experiment, the boundaries between R&D professionals and commercial experts completely blurred: R&D people came up with strongly commercial ideas, and commercial people devised technical solutions.</li>
+                                <li><strong>Positive work experience:</strong> Technological changes are often associated with more stress and less job satisfaction. In this experiment, AI users actually experienced more positive emotions (such as enthusiasm and energy) and suffered less from negative feelings like anxiety and frustration.</li>
+                            </ul>
+                            <p>These insights show that AI is more than a tool that automates existing tasks. It's a teammate that structurally changes our way of working and the structure of teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>4. Personal Tips & Experiments</h2>
+            </div>
+            
+            <div class="card full-width">
+                <h3>Writing Effective AI Prompts</h3>
+                <p>A good prompt is the key to effective use of generative AI. The following structure helps you get clear and focused results:</p>
+                
+                <div class="prompt-steps">
+                    <div class="step step-1">
+                        <div class="step-number">1</div>
+                        <p>Assign a specific expertise or role to the AI that fits your question</p>
+                    </div>
+                    <div class="step step-2">
+                        <div class="step-number">2</div>
+                        <p>Clearly define who the answer is intended for and what you want to achieve with it</p>
+                    </div>
+                    <div class="step step-3">
+                        <div class="step-number">3</div>
+                        <p>Specify the desired tone, length, and format of the answer</p>
+                    </div>
+                </div>
+                
+                <h4>Example prompt:</h4>
+                <div class="quote">
+                    "You are a prominent media innovator with deep knowledge of the changing media landscape in Europe. I would like you to answer my question in a way that is inspiring for the strategic management of our media company. What will the revenue model look like in 5 years in a world dominated by streaming platforms and personalized content? Give your answer concisely in one paragraph."
+                </div>
+                
+                <p><strong>(A)Inception Prompting tip:</strong> Have AI write or improve your prompts! A useful approach is, for example: "Improve this prompt: [your prompt idea]." This helps create a structured prompt that is easily readable for AI.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 &samhoud - AI Inspiration Newsletter</p>
+        </div>
+    </footer>
+</body>
+</html>
