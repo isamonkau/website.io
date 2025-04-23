@@ -230,6 +230,32 @@
                 margin: 10px 0;
             }
         }
+            
+
+            /* Responsive design for action figure story */
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: block;
+    }
+    
+    .desktop-flex-container {
+        flex-direction: column !important;
+    }
+            
+        }
     </style>
 </head>
 <body>
@@ -299,22 +325,32 @@
                 </div>
             </div>
             
-            <div class="card full-width" style="padding-bottom: 25px;">
-                <h3>The AI Action Figure Hype: Your Digital Doppelgänger, Now in Plastic</h3>
-                <div style="display: flex; gap: 20px; align-items: flex-start;">
-                    <div style="flex: 1;">
-                        <p>Who hasn't dreamed of being turned into an action figure? The latest viral AI trend is making that dream (virtually) real. Sparked by tools like OpenAI's image generation, users can create eerily accurate, toy-style versions of themselves—complete with packaging, accessories, and attitude.</p> 
-                        <p>What started as a niche internet joke has exploded into a cultural moment, with everyone from influencers to executives sharing their plastic-fantasy alter egos. For media brands, it's a playful reminder of how personal and viral AI-generated visuals can be. Who knows? Your next campaign hero might just come shrink-wrapped.</p>
-                        <p>For examples of AI action figures and the explanation on how to make your own figure, please read the following link: <a href="https://www.forbes.com/sites/lesliekatz/2025/04/15/ai-action-figure-trend-explained---and-how-to-make-your-own/" target="_blank">ChatGPT AI Action Figure Trend, Explained — And How To Make Your Own</a></p>
-                    </div>
-                    <div style="width: 300px; min-width: 300px;">
-                        <div class="story-image" style="height: 300px; width: 300px;">
-                            <img src="actiondoll.jpg" alt="AI-generated action figure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    <div class="card full-width" style="padding-bottom: 25px;">
+                       <h3>The AI Action Figure Hype: Your Digital Doppelgänger, Now in Plastic</h3>
+                       <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                            <!-- Mobile-only image (only shows on small screens) -->
+                            <div class="mobile-only" style="width: 100%; max-width: 300px;">
+                              <div class="story-image" style="height: 300px; width: 100%;">
+                                  <img src="your-action-figure-image.png" alt="AI-generated action figure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                              </div>
+                            </div>
+        
+                            <!-- Desktop layout (flex row) that becomes column on mobile -->
+                            <div class="desktop-flex-container" style="display: flex; gap: 20px; align-items: flex-start; width: 100%;">
+                                <div style="flex: 1;">
+                                    <p>Who hasn't dreamed of being turned into an action figure? The latest viral AI trend is making that dream (virtually) real. Sparked by tools like OpenAI's image generation, users can create eerily accurate, toy-style versions of themselves—complete with packaging, accessories, and attitude.</p> 
+                                    <p>What started as a niche internet joke has exploded into a cultural moment, with everyone from influencers to executives sharing their plastic-fantasy alter egos. For media brands, it's a playful reminder of how personal and viral AI-generated visuals can be. Who knows? Your next campaign hero might just come shrink-wrapped.</p>
+                                    <p>For examples of AI action figures and the explanation on how to make your own figure, please read the following link: <a href="https://www.forbes.com/sites/lesliekatz/2025/04/15/ai-action-figure-trend-explained---and-how-to-make-your-own/" target="_blank">ChatGPT AI Action Figure Trend, Explained — And How To Make Your Own</a></p>
+                                 </div>
+                                 <!-- Desktop-only image (hidden on mobile) -->
+                                 <div class="desktop-only" style="width: 300px; min-width: 300px;">
+                                     <div class="story-image" style="height: 300px; width: 300px;">
+                                         <img src="your-action-figure-image.png" alt="AI-generated action figure" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                     </div>
+                                 </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
