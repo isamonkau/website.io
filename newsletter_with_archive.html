@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&samhoud AI Inspiration Newsletter NL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/futura-pt');
+        
+        :root {
+            --primary-blue: #0c2aad;
+            --primary-ocean: #4272ab;
+            --accent-iris: #b4bbfa;
+            --accent-orange: #ffa314;
+            --accent-ivory: #fef9f3;
+            --text-color: #333;
+            --section-padding: 40px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Futura PT', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        h3 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-orange);
+        }
+
+        h4 {
+            font-family: 'Futura PT Medium Oblique', 'Futura PT', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        p, li {
+            font-family: 'Futura PT', sans-serif;
+            margin-bottom: 15px;
+        }
+        
+        .subheader {
+            font-family: 'Futura PT Light Oblique', 'Futura PT', sans-serif;
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            padding: 20px 0;
+            background-color: white;
+        }
+        
+        .section h2 {
+            color: var(--primary-blue);
+        }
+        
+        .section-header {
+            color: var(--primary-ocean);
+            padding: 30px 0 10px 0;
+            margin-bottom: 30px;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-ocean);
+            display: inline-block;
+            padding-bottom: 8px;
+            position: relative;
+        }
+        
+        .section-header h2:after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: var(--primary-ocean);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            border-left: 4px solid var(--accent-orange);
+            margin: 20px 0;
+            background-color: var(--accent-ivory);
+        }
+        
+        .highlight {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .prompt-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .step {
+            flex: 1;
+            padding: 20px;
+            margin: 0 10px;
+            border-radius: 8px;
+            color: white;
+            position: relative;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .step-1 {
+            background-color: var(--primary-blue);
+        }
+        
+        .step-2 {
+            background-color: var(--primary-ocean);
+        }
+        
+        .step-3 {
+            background-color: var(--accent-orange);
+        }
+        
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .story-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .image-size-info {
+            position: absolute;
+            font-family: 'Futura PT', sans-serif;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Archive Styles */
+        .archive-section {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 3px solid var(--primary-ocean);
+        }
+
+        .archive-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .archive-header h2 {
+            color: var(--primary-ocean);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .archive-header p {
+            color: #666;
+            font-style: italic;
+        }
+
+        .newsletter-archive {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .newsletter-header {
+            background: linear-gradient(135deg, var(--primary-ocean), var(--primary-blue));
+            color: white;
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-header:hover {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-ocean));
+        }
+
+        .newsletter-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 1.4rem;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-content {
+            display: none;
+            padding: 0;
+        }
+
+        .newsletter-content.active {
+            display: block;
+        }
+
+        .newsletter-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .prompt-steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin: 10px 0;
+            }
+        }
+            
+        /* Responsive design for action figure story */
+        .desktop-only {
+            display: block;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+            
+            .mobile-only {
+                display: block;
+            }
+            
+            .desktop-flex-container {
+                flex-direction: column !important;
+            }
+        }
+
+        /* Existing card content styles */
+        .card-content-hidden {
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        
+        .card-content-visible {
+            display: block;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        
+        .read-more-btn {
+            background-color: var(--primary-ocean);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Futura PT', sans-serif;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more-btn:hover {
+            background-color: var(--primary-blue);
+        }
+        
+        .card-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .first-paragraph {
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .btn-container {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>&samhoud | AI Inspiration Newsletter</h1>
+            <p class="subheader">Inspiration for Media & Advertising Professionals</p>
+        </div>
+    </header>
+
+    <section class="section" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="card full-width">
+                <p>Welcome to the first edition of our AI Inspiration Newsletter! Organizations are changing rapidly under the influence of AI. With this newsletter, you'll stay informed about the latest developments, inspiring insights, and practical examples at the intersection of technology, media, and advertising.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>1. AI News in the World: Trends & Developments</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Multimodal Image Generation: A New Level of Creativity</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[AI Generated Image]</div>
+                    </div>
+                    <div id="content-container-multimodal" class="card-container">
+                        <div class="first-paragraph">
+                            <p>In recent weeks, both Google and OpenAI have achieved a breakthrough with multimodal image generation. This means that AI can now directly create images with the same precision as text, token by token. Where previously generated text on images often changed into illegible scribbles, AI can now create professional-looking visual content with readable texts. For example, the images in part 1 and part 3 of this newsletter have been AI generated, and this technology is also used in the "AI action figure trend" mentioned in the story below.</p>
+                            <div id="btn-container-multimodal" class="btn-container">
+                                <button id="btn-multimodal" class="read-more-btn" onclick="toggleContent('multimodal')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-multimodal" class="card-content-hidden">
+                            <p>This technology opens up a world of new possibilities for creative professionals. The combination of precision and dialogue makes this technology particularly powerful, as you can directly consult with the AI about your images and refine them until they're perfect.</p>
+                            <p>This technology is now accessible via a free ChatGPT account, although there are limitations on the number of images you can create per day. With a paid account, you can generate images faster and without limits.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Vibe Coding: Programming Without Code</h3>
+                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                    <div class="story-image">
+                        <div class="image-size-info">[AI Generated Image]</div>
+                    </div>
+                    <div id="content-container-vibecoding" class="card-container">
+                        <div class="first-paragraph">
+                            <p>A second fascinating development is "vibe coding," a revolutionary way to create digital products without programming knowledge. The term describes a process where you simply explain in plain language what you want to build, including the desired "vibe" or style, after which the AI generates working code. This newsletter, for example, is made completely through vibe coding in <a href="https://claude.ai" target="_blank">Claude AI</a>.</p>
+                            <div id="btn-container-vibecoding" class="btn-container">
+                                <button id="btn-vibecoding" class="read-more-btn" onclick="toggleContent('vibecoding')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-vibecoding" class="card-content-hidden">
+                            <p>In essence, this means: you tell AI what you want to build in natural language, and the AI converts this into working code. You don't need to program; you describe your idea, iterate a bit, and you have a working app or website. This not only speeds up the innovation process but also opens new doors for creativity because technical complexity is no longer a limitation.</p>
+                            <p>This feature is available (with limitations) for free in both ChatGPT and Claude AI, with the option to directly deploy the site. For a practical demonstration, we used just one prompt to create an interactive quiz about this newsletter, which you can experience <a href="https://claude.site/artifacts/94cc35cd-30bb-4257-a3c8-5ce29dad4ccc" target="_blank">here</a>.</p>
+                            <h4>Prompt used:</h4>
+                            <div class="quote">
+                                "Create an interactive quiz about this newsletter with 10 multiple-choice questions. Make it visually appealing with a clean design that matches the &samhoud brand colors (primary blue #0c2aad, accent orange #ffa314). Include a score tracker and immediate feedback for each answer. At the end, display the final score."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card full-width" style="padding-bottom: 25px;">
+               <h3>The AI Action Figure Hype: Your Digital Doppelgänger, Now in Plastic</h3>
+               <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                    <!-- Mobile-only image (only shows on small screens) -->
+                    <div class="mobile-only" style="width: 100%; max-width: 300px;">
+                      <div class="story-image" style="height: 300px; width: 100%;">
+                          <div class="image-size-info">[Action Figure Image]</div>
+                      </div>
+                    </div>
+
+                    <!-- Desktop layout (flex row) that becomes column on mobile -->
+                    <div class="desktop-flex-container" style="display: flex; gap: 20px; align-items: flex-start; width: 100%;">
+                        <div style="flex: 1;">
+                            <p>Who hasn't dreamed of being turned into an action figure? The latest viral AI trend is making that dream (virtually) real. Sparked by tools like OpenAI's image generation, users can create eerily accurate, toy-style versions of themselves—complete with packaging, accessories, and attitude.</p> 
+                            <p>What started as a niche internet joke has exploded into a cultural moment, with everyone from influencers to executives sharing their plastic-fantasy alter egos. For media brands, it's a playful reminder of how personal and viral AI-generated visuals can be. Who knows? Your next campaign hero might just come shrink-wrapped.</p>
+                            <p>For examples of AI action figures and the explanation on how to make your own figure, please read the following link: <a href="https://www.forbes.com/sites/lesliekatz/2025/04/15/ai-action-figure-trend-explained---and-how-to-make-your-own/" target="_blank">ChatGPT AI Action Figure Trend, Explained — And How To Make Your Own</a></p>
+                         </div>
+                         <!-- Desktop-only image (hidden on mobile) -->
+                         <div class="desktop-only" style="width: 300px; min-width: 300px;">
+                             <div class="story-image" style="height: 300px; width: 300px;">
+                                 <div class="image-size-info">[Action Figure Image]</div>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>2. Trends in the Advertisement Industry: AI's Growing Influence</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Veo and the rise of the AI director: a new era for media creation</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[Veo AI Director Image]</div>
+                    </div>
+                    <div id="content-container-veo" class="card-container">
+                        <div class="first-paragraph">
+                            <p>If you thought AI was impressive for churning out scripts or enhancing video metadata, buckle up. Google just introduced Veo, a generative video model that moves us into full cinematic territory. This isn't just "AI makes a video"; it's "AI collaborates on your vision," and it could signal a major shift in how media content gets conceived and created.</p>
+                            <div id="btn-container-veo" class="btn-container">
+                                <button id="btn-veo" class="read-more-btn" onclick="toggleContent('veo')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-veo" class="card-content-hidden">
+                            <p>Veo allows creators to generate high-quality video content simply from text prompts, but what makes it stand out is its attention to cinematic nuance. It understands concepts like camera movement, visual composition, lighting and even storytelling tone. Whether it's a sweeping drone shot or a dramatic slow-motion moment, Veo knows how to deliver visuals that feel crafted rather than cobbled together.</p>
+                            <p>What's particularly compelling for RTL Nederland is the growing trend of AI as a creative partner rather than a novelty tool. Veo gives users more control over the final product, making it possible to iterate on scenes, adjust visual styles, and build out narratives in a way that mirrors how real-world production teams work. This level of creative collaboration opens the door to faster concept testing, more accessible previsualization and even full-on campaign development with drastically reduced turnaround times.</p>
+                            <p>Google is also hinting at a broader ecosystem for Veo, including potential integration into YouTube shorts and workspace tools. That's a clear signal that AI video generation is being primed not just for experimental art, but for practical, everyday media workflows from short-form content to internal storytelling.</p>
+                            <p>If your team's been wondering how AI might scale creative process at RTL Nederland without diluting the brand voice, Veo is a strong signal of what's coming next. It's less about replacing talent and more about reimagining what talented teams can do with a little machine-powered magic behind the lens.</p>
+                            <p>Curious to see Veo in action? You can read the full breakdown from google right here.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>From requiem to reality: Darren Aronofsky dives into AI storytelling</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[Aronofsky AI Studio Image]</div>
+                    </div>
+                    <div id="content-container-aronofsky" class="card-container">
+                        <div class="first-paragraph">
+                            <p>When a filmmaker like Darren Aronofsky launches an AI studio, the media industry pays attention. The auteur behind Black Swan and The Whale is now stepping into the generative age with primordial soup, a new creative venture developed in partnership with Google Deepmind. But this isn't just another case of "Hollywood meets AI." It's a sign of where media creation is heading: a fusion of human storytelling instincts and machine-enabled experimentation.</p>
+                            <div id="btn-container-aronofsky" class="btn-container">
+                                <button id="btn-aronofsky" class="read-more-btn" onclick="toggleContent('aronofsky')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-aronofsky" class="card-content-hidden">
+                            <p>Primordial soup aims to explore how large language models and other generative tools can be used not to replace filmmakers, but to radically expand the creative process. This is about enhancing artistic vision, not automating it. Aronofsky describes the project as a sandbox: an exploratory space where artists can collaborate with AI to unearth new forms of narrative, visual language and cinematic expression.</p>
+                            <p>The collaboration with Deepmind, Google's advanced AI research lab, adds weight to the project's ambition. This isn't about flashy gimmicks or tech demos; it's about building frameworks for storytelling that are both deeply human and powered by machines with vast creative range. It also reflects a broader industry trend: the shift from seeing ai as a post-production shortcut to embracing it as a genuine co-creator at the earliest stages of ideation.</p>
+                            <p>For media professionals, this signals a growing movement toward what might be called "AI-native creativity"—stories and formats born in collaboration with algorithms, not just polished by them. It's less about automation and more about augmentation, giving creatives more bandwidth to experiment, iterate, and innovate.</p>
+                            <p>Want to hear Darren Aronofsky talk about narrative as code and what storytelling looks like in the AI age? The full article is well worth a read: <a href="#" target="_blank">Variety: Darren Aronofsky launches AI studio 'primordial soup' with Google deepmind</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Netflix's new look: vertical video, AI curation and the TikTok of streaming</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[Netflix Redesign Image]</div>
+                    </div>
+                    <div id="content-container-netflix" class="card-container">
+                        <div class="first-paragraph">
+                            <p>Netflix is redesigning its home screen and the changes say a lot about where the media industry is headed. The platform's new look, currently being tested with select users, leans into vertical video previews, tighter personalization and a browsing experience that feels unmistakably influenced by social media's most addictive formats.</p>
+                            <div id="btn-container-netflix" class="btn-container">
+                                <button id="btn-netflix" class="read-more-btn" onclick="toggleContent('netflix')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-netflix" class="card-content-hidden">
+                            <p>What's new? Instead of the familiar horizontal scroll of static thumbnails, users will soon see full-screen vertical trailers auto-playing as they swipe through content: more TikTok, less traditional tv guide. It's not just a cosmetic refresh; it's a strategic pivot. Netflix is clearly betting on snackable, high-engagement formats to drive discovery in a landscape where attention spans are short and choices are overwhelming.</p>
+                            <p>Under the hood, AI is doing more of the heavy lifting. The new user interface is built on smarter algorithms that serve content not just based on genre preferences but on deeper viewing behavior and real-time signals. The goal? Get the right content in front of the right viewer faster, reducing friction between "just browsing" and hitting play.</p>
+                            <p>For RTL Nederland, this signals two key trends: first, the visual language of short-form video is seeping into long-form platforms, meaning content packaging now matters as much as content itself. Second, the way platforms present stories is becoming as algorithmically optimized as the stories they produce. Distribution is design and increasingly, design is driven by data.</p>
+                            <p>Netflix's overhaul isn't just about aesthetics. It's a glimpse into how streaming giants are reshaping themselves to stay competitive in a world where TikTok sets the tone and AI powers the back end.</p>
+                            <p>Curious to see where Netflix is headed and what it might mean for RTL Nederland? You can catch the full story here: <a href="#" target="_blank">Hollywood reporter: Netflix's new home screen is coming soon</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>YouTube's AI knows the perfect time to show you an ad: right after the good part</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[YouTube AI Ads Image]</div>
+                    </div>
+                    <div id="content-container-youtube" class="card-container">
+                        <div class="first-paragraph">
+                            <p>YouTube is rethinking its ad breaks, and it's not just about more commercials: it's about smarter timing. The platform is rolling out a new AI-powered system that places ads after peak moments in videos, rather than interrupting randomly. The goal? Ride the emotional wave, not kill the vibe.</p>
+                            <div id="btn-container-youtube" class="btn-container">
+                                <button id="btn-youtube" class="read-more-btn" onclick="toggleContent('youtube')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-youtube" class="card-content-hidden">
+                            <p>YouTube's machine learning models analyze a video's structure pacing, visuals, sound, and even viewer engagement data to pinpoint when a major moment lands. Once the laugh, gasp, or big reveal happens, the ad rolls in. It's a shift from disruption to strategic placement, designed to keep viewers watching while also boosting ad effectiveness.</p>
+                            <p>For RTL Nederland, this is more than just an ad-tech upgrade: it signals a broader trend toward emotional intelligence in content delivery. As platforms become more context-aware, the boundaries between content, timing, and monetization continue to blur. Creators might find themselves thinking not just about story arcs, but about where AI will sense the "peak" and how that might affect the flow of their work.</p>
+                            <p>It's another reminder that AI isn't just changing what we create, but how audiences experience it. And in this case, it's all about knowing when to pause.</p>
+                            <p>For a deeper dive into how YouTube is reshaping ad strategy with AI, read the full article here: <a href="#" target="_blank">Techcrunch: YouTube viewers will start seeing ads after 'peak moments' in videos</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>3. People & Leadership</h2>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Making AI work: Leadership, Lab, and Crowd</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[AI Leadership Strategy Image]</div>
+                    </div>
+                    <div id="content-container-aileadership" class="card-container">
+                        <div class="first-paragraph">
+                            <p>Many companies see promising productivity gains from AI, yet struggle to translate these individual successes into broader organizational benefits. Ethan Mollick highlights three essential components to effectively realize AI's potential: Leadership, Lab, and Crowd.</p>
+                            <div id="btn-container-aileadership" class="btn-container">
+                                <button id="btn-aileadership" class="read-more-btn" onclick="toggleContent('aileadership')">Read more</button>
+                            </div>
+                        </div>
+                        <div id="content-aileadership" class="card-content-hidden">
+                            <p><strong>Leadership:</strong> Effective AI adoption begins with leadership clearly communicating an engaging vision. Leaders must move beyond generic statements about efficiency and vividly describe how AI will reshape day-to-day work. Employees seek reassurance on job security and clear guidance on how AI-driven productivity gains will impact their roles. Leadership also involves creating incentives for transparent AI usage and modeling practical AI applications actively within their workflows.</p>
+                            <p><strong>Lab:</strong> Organizations should establish dedicated teams—labs—that experiment, innovate, and rapidly iterate with AI tools. Labs translate crowd-sourced ideas into practical solutions, creating benchmarks tailored to company-specific tasks. Quick, iterative experiments help organizations quickly adapt to rapid AI advancements, enabling them to remain at the forefront of innovation.</p>
+                            <p><strong>Crowd:</strong> Employees—the crowd—play a pivotal role by exploring AI through daily tasks, often uncovering practical use cases that centralized strategies might overlook. However, widespread hidden AI use, driven by fear of repercussions or unclear policies, currently undermines potential gains. Companies must actively encourage openness and reward transparency in AI usage, enabling insights from employee experiences to inform broader organizational strategies.</p>
+                            <p>Integrating these three elements—visionary leadership, agile experimentation through labs, and employee-driven innovation—will enable organizations to not only adopt AI more effectively but to fundamentally transform their operations and maintain competitive advantage.</p>
+                            <p>Link: <a href="#" target="_blank">Making AI Work: Leadership, Lab, and Crowd</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>AI as your Teammate</h3>
+                    <div class="story-image">
+                        <div class="image-size-info">[AI Teammate Image]</div>
+                    </div>
+                    <div id="content-container-teammate" class="card-container">
+                        <p>A large-scale experiment at Procter & Gamble, conducted by Harvard and Wharton Business School with 776 experienced professionals, shows fascinating results about AI as a teammate in professional environments.</p>
+                        <div id="btn-container-teammate">
+                            <button id="btn-teammate" class="read-more-btn" onclick="toggleContent('teammate')">Read more</button>
+                        </div>
+                        <div id="content-teammate" class="card-content-hidden">
+                            <ul>
+                                <li><strong>Better performance:</strong> one person with AI can achieve comparable results to a two-person team without AI, while a two-person team using AI achieves the very best results.</li>
+                                <li><strong>Breaking down silos:</strong> AI helps specialists embrace each other's fields. In the experiment, the boundaries between R&D professionals and commercial experts completely blurred: R&D people came up with strongly commercial ideas, and commercial people devised technical solutions.</li>
+                                <li><strong>Positive work experience:</strong> Technological changes are often associated with more stress and less job satisfaction. In this experiment, AI users actually experienced more positive emotions (such as enthusiasm and energy) and suffered less from negative feelings like anxiety and frustration.</li>
+                            </ul>
+                            <p>These insights show that AI is more than a tool that automates existing tasks. It's a teammate that structurally changes our way of working and the structure of teams.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>4. Personal Tips & Experiments</h2>
+            </div>
+            
+            <div class="card full-width">
+                <h3>ChatGPT's Voice Mode as a dynamic brainstorm partner without screens</h3>
+                <p>Struggling with brainstorming ideas? Try OpenAI's advanced voice mode to have a dynamic dialogue with AI. Perfect during commutes, walks, or when stepping away from screens.</p>
+                
+                <p>Here's how to get started:</p>
+                
+                <div class="prompt-steps">
+                    <div class="step step-1">
+                        <div class="step-number">💬</div>
+                        <h4 style="color: white; margin-bottom: 10px;">Speak Freely</h4>
+                        <p>Talking aloud sparks natural, creative thinking.</p>
+                    </div>
+                    <div class="step step-2">
+                        <div class="step-number">📱</div>
+                        <h4 style="color: white; margin-bottom: 10px;">Hands-Free</h4>
+                        <p>Ideal for when note-taking isn't possible. ChatGPT captures everything.</p>
+                    </div>
+                    <div class="step step-3">
+                        <div class="step-number">🎭</div>
+                        <h4 style="color: white; margin-bottom: 10px;">Use Custom Roles</h4>
+                        <p>Let ChatGPT act as experts to critique and expand ideas.</p>
+                    </div>
+                </div>
+                
+                <p>Afterward, ChatGPT provides a clear summary for easy reference. You can activate this function by clicking on the "send" button in the textbox of ChatGPT, when you have not yet written any text.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHIVE SECTION -->
+    <section class="archive-section">
+        <div class="container">
+            <div class="archive-header">
+                <h2>Archive</h2>
+                <p>Browse previous editions of our AI Inspiration Newsletter</p>
+            </div>
+
+            <div class="newsletter-archive">
+                <div class="newsletter-header" onclick="toggleArchive('april2025')">
+                    <h3>Newsletter April 2025</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="newsletter-content" id="april2025">
+                    <!-- DUPLICATED CONTENT FOR APRIL 2025 -->
+                    <section class="section" style="padding-bottom: 10px;">
+                        <div class="container">
+                            <div class="card full-width">
+                                <p>Welcome to the first edition of our AI Inspiration Newsletter! Organizations are changing rapidly under the influence of AI. With this newsletter, you'll stay informed about the latest developments, inspiring insights, and practical examples at the intersection of technology, media, and advertising.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section" style="padding-bottom: 10px;">
+                        <div class="container">
+                            <div class="section-header">
+                                <h2>1. AI News in the World: Trends & Developments</h2>
+                            </div>
+                            
+                            <div class="grid">
+                                <div class="card">
+                                    <h3>Multimodal Image Generation: A New Level of Creativity</h3>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[AI Generated Image]</div>
+                                    </div>
+                                    <div id="content-container-multimodal-apr" class="card-container">
+                                        <div class="first-paragraph">
+                                            <p>In recent weeks, both Google and OpenAI have achieved a breakthrough with multimodal image generation. This means that AI can now directly create images with the same precision as text, token by token. Where previously generated text on images often changed into illegible scribbles, AI can now create professional-looking visual content with readable texts. For example, the images in part 1 and part 3 of this newsletter have been AI generated, and this technology is also used in the "AI action figure trend" mentioned in the story below.</p>
+                                            <div id="btn-container-multimodal-apr" class="btn-container">
+                                                <button id="btn-multimodal-apr" class="read-more-btn" onclick="toggleContent('multimodal-apr')">Read more</button>
+                                            </div>
+                                        </div>
+                                        <div id="content-multimodal-apr" class="card-content-hidden">
+                                            <p>This technology opens up a world of new possibilities for creative professionals. The combination of precision and dialogue makes this technology particularly powerful, as you can directly consult with the AI about your images and refine them until they're perfect.</p>
+                                            <p>This technology is now accessible via a free ChatGPT account, although there are limitations on the number of images you can create per day. With a paid account, you can generate images faster and without limits.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <h3>Vibe Coding: Programming Without Code</h3>
+                                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[AI Generated Image]</div>
+                                    </div>
+                                    <div id="content-container-vibecoding-apr" class="card-container">
+                                        <div class="first-paragraph">
+                                            <p>A second fascinating development is "vibe coding," a revolutionary way to create digital products without programming knowledge. The term describes a process where you simply explain in plain language what you want to build, including the desired "vibe" or style, after which the AI generates working code. This newsletter, for example, is made completely through vibe coding in <a href="https://claude.ai" target="_blank">Claude AI</a>.</p>
+                                            <div id="btn-container-vibecoding-apr" class="btn-container">
+                                                <button id="btn-vibecoding-apr" class="read-more-btn" onclick="toggleContent('vibecoding-apr')">Read more</button>
+                                            </div>
+                                        </div>
+                                        <div id="content-vibecoding-apr" class="card-content-hidden">
+                                            <p>In essence, this means: you tell AI what you want to build in natural language, and the AI converts this into working code. You don't need to program; you describe your idea, iterate a bit, and you have a working app or website. This not only speeds up the innovation process but also opens new doors for creativity because technical complexity is no longer a limitation.</p>
+                                            <p>This feature is available (with limitations) for free in both ChatGPT and Claude AI, with the option to directly deploy the site. For a practical demonstration, we used just one prompt to create an interactive quiz about this newsletter, which you can experience <a href="https://claude.site/artifacts/94cc35cd-30bb-4257-a3c8-5ce29dad4ccc" target="_blank">here</a>.</p>
+                                            <h4>Prompt used:</h4>
+                                            <div class="quote">
+                                                "Create an interactive quiz about this newsletter with 10 multiple-choice questions. Make it visually appealing with a clean design that matches the &samhoud brand colors (primary blue #0c2aad, accent orange #ffa314). Include a score tracker and immediate feedback for each answer. At the end, display the final score."
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card full-width" style="padding-bottom: 25px;">
+                               <h3>The AI Action Figure Hype: Your Digital Doppelgänger, Now in Plastic</h3>
+                               <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
+                                    <!-- Mobile-only image (only shows on small screens) -->
+                                    <div class="mobile-only" style="width: 100%; max-width: 300px;">
+                                      <div class="story-image" style="height: 300px; width: 100%;">
+                                          <div class="image-size-info">[Action Figure Image]</div>
+                                      </div>
+                                    </div>
+
+                                    <!-- Desktop layout (flex row) that becomes column on mobile -->
+                                    <div class="desktop-flex-container" style="display: flex; gap: 20px; align-items: flex-start; width: 100%;">
+                                        <div style="flex: 1;">
+                                            <p>Who hasn't dreamed of being turned into an action figure? The latest viral AI trend is making that dream (virtually) real. Sparked by tools like OpenAI's image generation, users can create eerily accurate, toy-style versions of themselves—complete with packaging, accessories, and attitude.</p> 
+                                            <p>What started as a niche internet joke has exploded into a cultural moment, with everyone from influencers to executives sharing their plastic-fantasy alter egos. For media brands, it's a playful reminder of how personal and viral AI-generated visuals can be. Who knows? Your next campaign hero might just come shrink-wrapped.</p>
+                                            <p>For examples of AI action figures and the explanation on how to make your own figure, please read the following link: <a href="https://www.forbes.com/sites/lesliekatz/2025/04/15/ai-action-figure-trend-explained---and-how-to-make-your-own/" target="_blank">ChatGPT AI Action Figure Trend, Explained — And How To Make Your Own</a></p>
+                                         </div>
+                                         <!-- Desktop-only image (hidden on mobile) -->
+                                         <div class="desktop-only" style="width: 300px; min-width: 300px;">
+                                             <div class="story-image" style="height: 300px; width: 300px;">
+                                                 <div class="image-size-info">[Action Figure Image]</div>
+                                             </div>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div class="container">
+                            <div class="section-header">
+                                <h2>2. Trends in the Advertisement Industry: AI's Growing Influence</h2>
+                            </div>
+                            
+                            <div class="grid">
+                                <div class="card">
+                                    <h3>The 5Is Framework: BBC's Blueprint for the Future of Media</h3>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[BBC Framework Image]</div>
+                                    </div>
+                                    <div id="content-container-bbc-apr" class="card-container">
+                                        <p>The media landscape is undergoing rapid transformation as AI reshapes every aspect of content creation and consumption. BBC Research & Development has developed an framework—the "5Is"—that helps media leaders navigate this evolving territory. The media landscape is increasingly:</p>
+                                        <div id="btn-container-bbc-apr">
+                                            <button id="btn-bbc-apr" class="read-more-btn" onclick="toggleContent('bbc-apr')">Read more</button>
+                                        </div>
+                                        <div id="content-bbc-apr" class="card-content-hidden">
+                                            <ul>
+                                                <li><strong>Internet-only:</strong> "More than half of UK households will exclusively watch TV over the internet by 2030."</li>
+                                                <li><strong>Intelligent:</strong> "57% of UK Millennials want their content hyper-personalised." AI systems learn and adapt over time, improving their ability to deliver content that aligns with user interests and behaviours.</li>
+                                                <li><strong>Intermediated:</strong> "Over 50% of UK adults use social media as a news source." To maintain a direct and independent relationship with audiences, it is necessary to understand and work with the platforms and (AI) agents that mediate this interaction.</li>
+                                                <li><strong>Interactive:</strong> "Interactive content generates a 52% higher engagement rate than static content". Today's audiences prefer dynamic interactions, which AI enables by adjusting content in real-time based on user input for personalized experiences.</li>
+                                                <li><strong>Immersive:</strong> "By 2025, […] 95% (roughly 65 million people) will be smartphone users users." Through technologies like virtual and augmented reality, AI can contribute to creating more immersive content environments, enhancing user engagement.</li>
+                                            </ul>
+                                            <p>For media industry stakeholders, this framework illustrates how these converging forces are creating fundamentally new audience expectations. The BBC's analysis highlights that new experiences are particularly transformative—as AI systems are increasingly accurate, contextualize, and sometimes even transform media based on individual preferences.</p>
+                                            <p>If you want to read more, please use this link: <a href="https://www.bbc.co.uk/rd/articles/5is-ai-internet-interactive-immersive-intermediated-technology">The forces shaping the media landscape for the next generation</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Continue with other cards... -->
+                                <div class="card">
+                                    <h3>Agentic AI as a Transformative Force</h3>
+                                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[Agentic AI Image]</div>
+                                    </div>
+                                    <p>Recent analysis of agentic AI positions agentic AI as "the new frontier in AI evolution". Unlike conventional AI systems that simply respond to queries or perform discrete tasks, agentic AI operates with significantly more autonomy...</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h3>Spotify's AI-Powered Advertising Revolution</h3>
+                                    <div style="height: calc(1.6 * 1.5rem);"></div>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[Spotify AI Image]</div>
+                                    </div>
+                                    <p>Spotify's recent Advance event showcased how a major media platform is applying advanced AI to transform both audience experiences and business models...</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h3>Google's Vertex AI Studio: Democratizing Content Creation</h3>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[Google Vertex AI Image]</div>
+                                    </div>
+                                    <p>Google's Vertex AI Media Studio is redefining video production by enabling users to create complete videos from simple text prompts...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section" style="padding-top: 10px; padding-bottom: 10px;">
+                        <div class="container">
+                            <div class="section-header">
+                                <h2>3. People & Leadership</h2>
+                            </div>
+                            
+                            <div class="grid">
+                                <div class="card">
+                                    <h3>AI Makes Leaders More Human</h3>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[Leadership AI Image]</div>
+                                    </div>
+                                    <p>As AI takes over more tasks, an interesting paradox emerges: this technology can actually encourage more human leadership...</p>
+                                </div>
+                                
+                                <div class="card">
+                                    <h3>AI as your Teammate</h3>
+                                    <div class="story-image">
+                                        <div class="image-size-info">[AI Teammate Image]</div>
+                                    </div>
+                                    <p>A large-scale experiment at Procter & Gamble, conducted by Harvard and Wharton Business School with 776 experienced professionals...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section> 
+
+                    <section class="section" style="padding-top: 10px;">
+                        <div class="container">
+                            <div class="section-header">
+                                <h2>4. Personal Tips & Experiments</h2>
+                            </div>
+                            
+                            <div class="card full-width">
+                                <h3>Writing Effective AI Prompts</h3>
+                                <p>A good prompt is the key to effective use of generative AI. The following structure helps you get clear and focused results:</p>
+                                
+                                <div class="prompt-steps">
+                                    <div class="step step-1">
+                                        <div class="step-number">1</div>
+                                        <p>Assign a specific expertise or role to the AI that fits your question</p>
+                                    </div>
+                                    <div class="step step-2">
+                                        <div class="step-number">2</div>
+                                        <p>Clearly define who the answer is intended for and what you want to achieve with it</p>
+                                    </div>
+                                    <div class="step step-3">
+                                        <div class="step-number">3</div>
+                                        <p>Specify the desired tone, length, and format of the answer</p>
+                                    </div>
+                                </div>
+                                
+                                <h4>Example prompt:</h4>
+                                <div class="quote">
+                                    "You are a prominent media innovator with deep knowledge of the changing media landscape in Europe. I would like you to answer my question in a way that is inspiring for the strategic management of our media company. What will the revenue model look like in 5 years in a world dominated by streaming platforms and personalized content? Give your answer concisely in one paragraph."
+                                </div>
+                                
+                                <p><strong>(A)Inception Prompting tip:</strong> Have AI write or improve your prompts! A useful approach is, for example: "Improve this prompt: [your prompt idea]." This helps create a structured prompt that is easily readable for AI.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 &samhoud - AI Inspiration Newsletter</p>
+            <div style="height: 30px; width: 150px; background-color: rgba(255,255,255,0.2); border-radius: 4px; display: inline-block; margin-left: 10px;"></div>
+        </div>
+    </footer>
+
+    <script>
+        // Existing toggle function for read more buttons
+        function toggleContent(id) {
+            const hiddenContent = document.getElementById('content-' + id);
+            const button = document.getElementById('btn-' + id);
+            const buttonContainer = document.getElementById('btn-container-' + id);
+            const contentContainer = document.getElementById('content-container-' + id);
+            const firstParagraph = contentContainer.querySelector('.first-paragraph');
+            
+            if (hiddenContent.className === 'card-content-hidden') {
+                hiddenContent.className = 'card-content-visible';
+                button.textContent = 'Read less';
+                contentContainer.appendChild(buttonContainer);
+            } else {
+                hiddenContent.className = 'card-content-hidden';
+                button.textContent = 'Read more';
+                firstParagraph.appendChild(buttonContainer);
+            }
+        }
+
+        // New function for archive toggle
+        function toggleArchive(id) {
+            const content = document.getElementById(id);
+            const header = event.target.closest('.newsletter-header');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                header.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                header.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
